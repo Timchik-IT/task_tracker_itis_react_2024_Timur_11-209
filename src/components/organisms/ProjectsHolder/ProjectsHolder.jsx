@@ -18,14 +18,14 @@ const ProjectsHolder = () => {
                 {mockProjects.map(({ id, name, description }) => {
                 return (
                     <tr key={id}>
-                    <TableCol>{id}</TableCol>
-                    <TableCol>{name}</TableCol>
-                    <TableCol>{description}</TableCol>
-                    <TableColActions>
-                        <Button lable='Edit' variant="primary" onClick={() => {}}>Edit</Button>
-                        <Button lable='Show' variant="warning" onClick={() => {}}>Show</Button>
-                        <Button lable='Delete' variant="danger" onClick={() => {}}>Delete</Button>
-                    </TableColActions>
+                        <TableCol>{id}</TableCol>
+                        <TableCol>{name}</TableCol>
+                        <TableCol>{description}</TableCol>
+                        <TableColActions>
+                            <Button lable='Edit' variant="primary" onClick={() => {}} color='green'>Edit</Button>
+                            <Button lable='Show' variant="warning" onClick={() => {}} color='blue'>Show</Button>
+                            <Button lable='Delete' variant="danger" onClick={() => {}} color='red'>Delete</Button>
+                        </TableColActions>
                     </tr>
                 )
                 })}
