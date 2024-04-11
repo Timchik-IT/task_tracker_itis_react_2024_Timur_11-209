@@ -7,10 +7,6 @@ import { Table, TableCol, TableColActions, TableHead } from "./styled";
 const ProjectsHolder = () => {
     const [showModal, setShowModal] = useState(false);
 
-    const handleDeleteButton = () => {
-        setShowModal(true);
-    }
-
     const handleDeleteConfirm = () => {
         setShowModal(false)
     }
@@ -40,18 +36,19 @@ const ProjectsHolder = () => {
                         <TableColActions>
                             <Button lable='Edit' variant="primary" onClick={() => {}} color='green'>Edit</Button>
                             <Button lable='Show' variant="warning" onClick={() => {}} color='blue'>Show</Button>
-                            <Button lable='Delete' variant="danger" onClick={() => handleDeleteButton} color='red'>Delete</Button>
+                            <Button lable='Delete' variant="danger" onClick={() => setShowModal(true)} color='red'>Delete</Button>
                         </TableColActions>
                     </tr>
                 )
                 })}
             </tbody>
 
-            {showModal && (
+            { (showModal && (
             <ConfirmModal 
                 onCancel={handleDeleteCancel}
-                onConfirm={handleDeleteConfirm}/>
-            )}
+                onConfirm={handleDeleteConfirm}
+                show={showModal}/>))
+            }
         </Table>
     )
 }

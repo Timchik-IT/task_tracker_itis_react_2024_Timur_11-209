@@ -1,9 +1,10 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from "react-bootstrap";
 
-const ConfirmModal = ({ onConfirm, onCancle }) => {
+const ConfirmModal = ({ onConfirm, onCancle, show }) => {
     return (
-        <Modal>
+        <Modal show={show} onHide={onCancle}>
             <Modal.Header closeButton>
                 <Modal.Title>Confirmation</Modal.Title>
             </Modal.Header>
