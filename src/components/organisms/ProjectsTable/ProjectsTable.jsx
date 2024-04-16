@@ -4,15 +4,13 @@ import { useState } from 'react';
 
 import DeleteModal from '../../molecules/DeleteModal';
 
-import { mockProjects } from './mockProjects';
-
 import { Table, TableHead, TableCol, TableColActions } from './styled';
 
-const ProjectsTable = () => {
+const ProjectsTable = ({ projects }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [projectToDelete, setProjectToDelete] = useState(null);
 
-  const handleDeleteButton = (project) => {
+  const handleDeleteButton = () => {
     setProjectToDelete(project);
     setShowDeleteModal(true);
   }
@@ -40,7 +38,7 @@ const ProjectsTable = () => {
       </thead>
 
       <tbody>
-        {mockProjects.map(({ id, name, description }) => {
+        {projects.map(({ id, name, description }) => {
           return (
             <tr key={id}>
               <TableCol>{id}</TableCol>
